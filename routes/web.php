@@ -14,16 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('pages.homepage');
+    $halaman = '';
+    return view('pages.homepage')->with('halaman', $halaman);
 });
 
 Route::get('about', function () {
-    return view('pages.about');
+    $halaman = 'about';
+    return view('pages.about')->with('halaman', $halaman);
 });
 
 Route::get('siswa',function(){
+    $halaman = 'siswa';
     $siswa = ['Siswa A','Siswa B','Siswa C'];
     // return view('siswa.index', compact('siswa'));
-    return view('siswa.index')->with('siswa', $siswa);
+    return view('siswa.index')->with('siswa', $siswa)->with('halaman',$halaman);
     // return view('siswa.index',['siswa' => $siswa]);
 });
