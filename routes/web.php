@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,20 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $halaman = '';
-    return view('pages.homepage')->with('halaman', $halaman);
-});
+Route::get('/', 'PagesController@homepage');
+Route::get('about', 'PagesController@about');
+Route::get('siswa', 'SiswaController@index');
 
-Route::get('about', function () {
-    $halaman = 'about';
-    return view('pages.about')->with('halaman', $halaman);
-});
-
-Route::get('siswa',function(){
-    $halaman = 'siswa';
-    $siswa = ['Siswa A','Siswa B','Siswa C'];
-    // return view('siswa.index', compact('siswa'));
-    return view('siswa.index')->with('siswa', $siswa)->with('halaman',$halaman);
-    // return view('siswa.index',['siswa' => $siswa]);
-});
+Route::get('halaman-rahasia','RahasiaController@halamanRahasia')->name('secret');
+Route::get('showmesecret', 'RahasiaController@showMeSecret');
