@@ -13,4 +13,9 @@ class SiswaController extends Controller
         return view('siswa.index')->with('siswa', $siswa)->with('halaman', $halaman);
         // return view('siswa.index',['siswa' => $siswa]);
     }
+
+    public function create()
+    {
+        return view('siswa.create');
+    }
 }
