@@ -20,3 +20,10 @@ Route::get('/', function () {
 Route::get('about', function () {
     return view('pages.about');
 });
+
+Route::get('siswa',function(){
+    $siswa = ['Siswa A','Siswa B','Siswa C'];
+    // return view('siswa.index', compact('siswa'));
+    return view('siswa.index')->with('siswa', $siswa);
+    // return view('siswa.index',['siswa' => $siswa]);
+});
