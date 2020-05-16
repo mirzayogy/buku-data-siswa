@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Siswa;
 
 class SiswaController extends Controller
 {
@@ -15,9 +16,10 @@ class SiswaController extends Controller
 
     public function index(){
         $halaman = 'siswa';
+        $siswa_list = Siswa::all();
         $siswa = ['Siswa A', 'Siswa B', 'Siswa C'];
-        // return view('siswa.index', compact('siswa'));
-        return view('siswa.index')->with('siswa', $siswa)->with('halaman', $halaman);
+        return view('siswa.index', compact('halaman','siswa_list'));
+        // return view('siswa.index')->with('siswa', $siswa)->with('halaman', $halaman);
         // return view('siswa.index',['siswa' => $siswa]);
     }
 

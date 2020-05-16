@@ -4,13 +4,30 @@
 <div id="siswa">
     <h2>Siswa</h2>
 
-    <?php if (!empty($siswa)) : ?>
-        <ul>
-            <?php foreach ($siswa as $anak) : ?>
-                <li><?= $anak ?></li>
+    @if(!empty($siswa_list))
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NISN</th>
+                <th>Nama</th>
+                <th>Tgl Lahir</th>
+                <th>JK</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($siswa_list as $siswa) : ?>
+                <tr>
+                    <td>{{ $siswa->nisn }}</td>
+                    <td>{{ $siswa->nama_siswa }}</td>
+                    <td>{{ $siswa->tanggal_lahir }}</td>
+                    <td>{{ $siswa->jenis_kelamin }}</td>
+                </tr>
             <?php endforeach ?>
-        </ul>
-    <?php endif ?>
+        </tbody>
+    </table>
+    @else
+    <p>Tidak ada data</p>
+    @endif
 </div>
 
 @stop
