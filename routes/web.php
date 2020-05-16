@@ -19,7 +19,9 @@ Route::get('about', 'PagesController@about');
 Route::get('siswa', 'SiswaController@index');
 Route::get('siswa/create', 'SiswaController@create');
 Route::post('siswa', 'SiswaController@store');
-Route::get('siswa/{siswa}', 'SiswaController@Show');
+Route::get('siswa/{siswa}', 'SiswaController@show');
+Route::get('siswa/{siswa}/edit', 'SiswaController@edit');
+Route::patch('siswa/{siswa}', 'SiswaController@update');
 
 Route::get('halaman-rahasia','RahasiaController@halamanRahasia')->name('secret');
 Route::get('showmesecret', 'RahasiaController@showMeSecret');

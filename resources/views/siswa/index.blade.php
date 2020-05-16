@@ -22,7 +22,8 @@
                     <td>{{ $siswa->nama_siswa }}</td>
                     <td>{{ $siswa->tanggal_lahir }}</td>
                     <td>{{ $siswa->jenis_kelamin }}</td>
-                    <td>{{ link_to('siswa/'.$siswa->id,'Detail',['class' => 'btn btn-success btn-sm']) }}</td>
+                    <td>{{ link_to('siswa/'.$siswa->id,'Detail',['class' => 'btn btn-success btn-sm']) }}
+                        {{ link_to('siswa/'.$siswa->id.'/edit','Edit',['class' => 'btn btn-warning btn-sm']) }}</td>
                 </tr>
             <?php endforeach ?>
         </tbody>
