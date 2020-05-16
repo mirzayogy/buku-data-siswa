@@ -6,6 +6,13 @@ use Illuminate\Http\Request;
 
 class SiswaController extends Controller
 {
+    protected $request;
+
+    public function __construct(Request $req)
+    {
+        $this->request = $req;
+    }
+
     public function index(){
         $halaman = 'siswa';
         $siswa = ['Siswa A', 'Siswa B', 'Siswa C'];
@@ -17,5 +24,11 @@ class SiswaController extends Controller
     public function create()
     {
         return view('siswa.create');
+    }
+
+    public function store()
+    {
+        $data = $this->request;
+        $siswa = $data->all();
     }
 }

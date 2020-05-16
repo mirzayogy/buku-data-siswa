@@ -18,6 +18,7 @@ Route::get('/', 'PagesController@homepage');
 Route::get('about', 'PagesController@about');
 Route::get('siswa', 'SiswaController@index');
 Route::get('siswa/create', 'SiswaController@create');
+Route::post('siswa', 'SiswaController@store');
 
 Route::get('halaman-rahasia','RahasiaController@halamanRahasia')->name('secret');
 Route::get('showmesecret', 'RahasiaController@showMeSecret');

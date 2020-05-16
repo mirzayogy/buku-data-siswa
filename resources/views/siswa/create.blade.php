@@ -7,15 +7,15 @@
     <form action="{{url('siswa')}}" method="POST">
         <div class="form-group">
             <label for="nisn" class="control-label"></label>
-            <input type="text" id="nisn" class="form-control">
+            <input type="text" id="nisn" name="nisn" class="form-control">
         </div>
         <div class="form-group">
             <label for="nama_siswa" class="control-label"></label>
-            <input type="text" id="nama_siswa" class="form-control">
+            <input type="text" id="nama_siswa" name="nama_siswa" class="form-control">
         </div>
         <div class="form-group">
             <label for="tanggal_lahir" class="control-label"></label>
-            <input type="date" id="tanggal_lahir" class="form-control">
+            <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control">
         </div>
         <div class="form-group">
             <label for="jenis_kelamin" class="control-label"></label>
