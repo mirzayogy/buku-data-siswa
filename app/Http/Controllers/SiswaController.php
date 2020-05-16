@@ -50,4 +50,11 @@ class SiswaController extends Controller
         $siswa->update($this->request->all());
         return redirect('siswa');
     }
+
+    public function destroy($id)
+    {
+        $siswa = Siswa::findOrFail($id);
+        $siswa->delete();
+        return redirect('siswa');
+    }
 }
