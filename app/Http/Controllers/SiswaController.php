@@ -30,8 +30,8 @@ class SiswaController extends Controller
 
     public function store()
     {
-        $data = $this->request;
-        $siswa = $data->all();
+       Siswa::create($this->request->all());
+       return redirect('siswa');
     }
     public function show($id)
     {

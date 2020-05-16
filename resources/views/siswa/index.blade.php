@@ -30,8 +30,20 @@
     @else
     <p>Tidak ada data</p>
     @endif
-    <div>
-        <strong>Jumlah Siswa : {{$jumlah_siswa}}</strong>
+    <div class="table-bottom">
+        <div class="float-left">
+            <strong>Jumlah Siswa : {{$jumlah_siswa}}</strong>
+        </div>
+        <div class="float-right">
+            Pagination
+        </div>
+    </div>
+    <div class="bottom-nav float-right">
+        <div>
+            <a href="siswa/create" class="btn btn-primary">
+                Tambah Siswa
+            </a>
+        </div>
     </div>
 </div>
 
