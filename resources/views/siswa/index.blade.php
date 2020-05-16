@@ -28,6 +28,9 @@
     @else
     <p>Tidak ada data</p>
     @endif
+    <div>
+        <strong>Jumlah Siswa : {{$jumlah_siswa}}</strong>
+    </div>
 </div>
 
 @stop
