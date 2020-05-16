@@ -43,12 +43,12 @@
     @else
     <p>Tidak ada data</p>
     @endif
-    <div class="table-bottom">
-        <div class="float-left">
+    <div class="table-nav">
+        <div class="jumlah-data">
             <strong>Jumlah Siswa : {{$jumlah_siswa}}</strong>
         </div>
-        <div class="float-right">
-            Pagination
+        <div class="paging">
+            {{$siswa_list->links()}}
         </div>
     </div>
     <div class="bottom-nav float-right">
