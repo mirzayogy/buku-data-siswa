@@ -33,4 +33,10 @@ class SiswaController extends Controller
         $data = $this->request;
         $siswa = $data->all();
     }
+    public function show($id)
+    {
+        $halaman = 'siswa';
+        $siswa = Siswa::findOrFail($id);
+        return view('siswa.show',compact('halaman','siswa'));
+    }
 }
