@@ -4,37 +4,37 @@
 <div id="siswa">
     <h2>Tambah Siswa</h2>
 
-    <form action="{{url('siswa')}}" method="POST">
-        <div class="form-group">
-            <label for="nisn" class="control-label"></label>
-            <input type="text" id="nisn" name="nisn" class="form-control">
+    {!! Form::open(['url' => 'siswa']) !!}
+    <div class="form-group">
+        {!! Form::label('nisn','NISN:',['class' => 'control-label']) !!}
+        {!! Form::text('nisn',null,['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('nama_siswa','Nama:',['class' => 'control-label']) !!}
+        {!! Form::text('nama_siswa',null,['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('tanggal_lahir','Tanggal Lahir:',['class' => 'control-label']) !!}
+        {!! Form::date('tanggal_lahir',null,['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('jenis_kelamin','Jenis Kelamin:',['class' => 'control-label']) !!}
+        <div class="radio">
+            <label>
+                {!! Form::radio('jenis_kelamin','L') !!}
+                Laki-laki
+            </label>
+            <label>
+                {!! Form::radio('jenis_kelamin','P') !!}
+                Perempuan
+            </label>
         </div>
-        <div class="form-group">
-            <label for="nama_siswa" class="control-label"></label>
-            <input type="text" id="nama_siswa" name="nama_siswa" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="tanggal_lahir" class="control-label"></label>
-            <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="jenis_kelamin" class="control-label"></label>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="jenis_kelamin" value="L" id="jenis_kelamin">
-                    Laki-laki
-                </label>
-                <label>
-                    <input type="radio" name="jenis_kelamin" value="P" id="jenis_kelamin">
-                    Perempuan
-                </label>
-            </div>
-        </div>
+    </div>
 
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary form-control" value="Tambah Siswa">
-        </div>
-    </form>
+    <div class="form-group">
+        {!! Form::submit('Tambah Siswa', ['class' => 'btn btn-primary form-control']) !!}
+    </div>
+    {!! Form::close() !!}
 </div>
 
 @stop
