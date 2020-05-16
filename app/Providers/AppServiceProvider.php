@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $halaman = '';
+        if (request()->segment(1) == 'siswa') {
+            $halaman = 'siswa';
+        }
+
+        if (request()->segment(1) == 'about') {
+            $halaman = 'about';
+        }
+
+        View::share('halaman', $halaman);
     }
 }
