@@ -26,3 +26,6 @@ Route::delete('siswa/{siswa}', 'SiswaController@destroy');
 
 Route::get('halaman-rahasia','RahasiaController@halamanRahasia')->name('secret');
 Route::get('showmesecret', 'RahasiaController@showMeSecret');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
